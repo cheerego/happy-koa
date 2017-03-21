@@ -1,0 +1,21 @@
+{
+  "name": "egg-example",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "placeless <41974873@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/hakimel/reveal.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "componentsDirectory": "public/",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

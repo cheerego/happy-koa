@@ -1,0 +1,30 @@
+{
+  "name": "egg-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "super": "PORT=3000 supervisor -s server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-error": "^3.0.0",
+    "koa-logger": "^2.0.1",
+    "koa-logger2": "0.0.1",
+    "koa-onerror": "^3.1.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "babel-register": "^6.24.0",
+    "supervisor": "^0.12.0"
+  }
+}
