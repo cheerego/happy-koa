@@ -18,7 +18,6 @@ import HomeController from './Http/Controllers/HomeController'
 class Bootstrap {
     constructor() {
         this.app = new Koa();
-        console.log(this);
         this.__initDebug();
         this.__initMiddleware();
         this.__initDatabase();
@@ -46,6 +45,14 @@ class Bootstrap {
          * onerror
          */
         onerror(this.app);
+
+        /**
+         * error
+         */
+        // this.app.use(error({
+        //     engine: 'twig',
+        //     template: path.dirname(__dirname) + '/public/error.twig'
+        // }));
     }
 
     __initMiddleware() {
@@ -72,15 +79,6 @@ class Bootstrap {
     }
 
 }
-
-
-/**
- * error
- */
-// app.use(error({
-//     engine: 'pug',
-//     template: __dirname + '/error.pug'
-// }));
 
 
 export default Bootstrap;
