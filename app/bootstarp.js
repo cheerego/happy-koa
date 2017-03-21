@@ -8,7 +8,7 @@ import serve from 'koa-static';
 import route from 'koa-route';
 import logger from 'koa-logger2';
 // import error from 'koa-error';
-import onerror from 'koa-onerror';
+// import onerror from 'koa-onerror';
 import fs from 'fs';
 import path from 'path';
 import views from 'koa-views';
@@ -18,11 +18,21 @@ import HomeController from './Http/Controllers/HomeController'
 class Bootstrap {
     constructor() {
         this.app = new Koa();
+
+        // this.app.use((ctx,next) => {
+        //     ctx.body = 'Hello World!!';
+        //     console.log(ctx.path)
+        //     return  next()
+        // });
+
         this.__initDebug();
         this.__initMiddleware();
         this.__initDatabase();
         this.__initView();
         this.__initRoute();
+
+
+
 
     }
 
@@ -44,7 +54,7 @@ class Bootstrap {
         /**
          * onerror
          */
-        onerror(this.app);
+        // onerror(this.app);
 
         /**
          * error
