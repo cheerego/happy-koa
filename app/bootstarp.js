@@ -11,6 +11,7 @@ import logger from 'koa-logger2';
 import onerror from 'koa-onerror';
 import fs from 'fs';
 import path from 'path';
+import views from 'koa-views';
 import HomeController from './Http/Controllers/HomeController'
 
 
@@ -51,7 +52,6 @@ class Bootstrap {
 
     __initDatabase() {
 
-
     }
 
 
@@ -67,7 +67,6 @@ class Bootstrap {
     start() {
         this.app.listen(port, () => {
             console.log('started at %s:  - port:%s', new Date, port)
-            console.log(Object.getOwnPropertyNames(this));
         });
     }
 
