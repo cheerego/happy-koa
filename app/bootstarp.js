@@ -22,8 +22,9 @@ class Bootstrap {
         this.__initDebug();
         this.__initMiddleware();
         this.__initDatabase();
-        this.__initRoute();
         this.__initView();
+        this.__initRoute();
+
     }
 
     __initDebug() {
@@ -61,7 +62,7 @@ class Bootstrap {
 
 
     __initView() {
-
+        this.app.use(views(path.dirname(__dirname) + '/resources/views', {extension: 'twig'}))
     }
 
     start() {
