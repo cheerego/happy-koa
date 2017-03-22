@@ -4,11 +4,20 @@
 
 import route  from 'koa-route';
 import app from './Kernel/app'
-export default function get(url) {
+const get = (url) => {
     return (target, name, descriptor) => {
         app.use(route.get(url, descriptor.value))
         return descriptor;
     }
 }
+const post = (url) => {
+    return (target, name, descriptor) => {
+        app.use(route.post(url, descriptor.value))
+        return descriptor;
+    }
+}
 
+export {
+    get, post
+}
 

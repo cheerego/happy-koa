@@ -2,12 +2,18 @@
  * Created by placeless on 17/3/21.
  */
 
-
-import Define from '../../../config/define'
-import get from '../routes'
+import {get, post} from '../routes'
 class HomeController {
     @get('/123')
-     async index(ctx) {
+    async get(ctx) {
+        await this.render('home.twig', {
+            message: 'haha'
+        })
+    }
+
+
+    @post('/1234')
+    async post(ctx) {
         await this.render('home.twig', {
             message: 'haha'
         })
