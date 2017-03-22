@@ -3,10 +3,10 @@
  */
 class HomeController {
     async index(ctx) {
-        await this.render('404.twig', {
+        await this.render('home.twig', {
             message: 'haha'
         })
     }
 }
-export default new HomeController;
+export default  HomeController;
 
