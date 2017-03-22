@@ -3,83 +3,56 @@
  */
 
 const port = process.env.PORT || 3000
-import Koa from 'koa';
-import serve from 'koa-static';
-import route from 'koa-route';
-import logger from 'koa-logger2';
+import app from './Http/Kernel/app'
+// import serve from 'koa-static';
+// import route from 'koa-route';
+// import logger from 'koa-logger2';
 // import error from 'koa-error';
 // import onerror from 'koa-onerror';
-import fs from 'fs';
-import path from 'path';
-import views from 'koa-views';
-import HomeController from './Http/Controllers/HomeController'
-
+// import fs from 'fs';
+// import path from 'path';
+// import views from 'koa-views';
+import loaderControllers from './Http/plugins/loaderControllers'
+import view from './Http/Middleware/view'
+import logger from './Http/Middleware/logger';
+import serveStatic from './Http/Middleware/static';
+import onerror from './Http/Middleware/error';
 
 class Bootstrap {
     constructor() {
-        this.app = new Koa();
-
+        this.app = app;
         // this.app.use((ctx,next) => {
         //     ctx.body = 'Hello World!!';
         //     console.log(ctx.path)
         //     return  next()
         // });
-
         this.__initDebug();
         this.__initMiddleware();
         this.__initDatabase();
-        this.__initView();
         this.__initRoute();
-
-
-
-
+        this.__initController();
     }
-
     __initDebug() {
-        /**
-         * logger
-         */
-        let log_middleware = logger('ip [day/month/year:time zone] "method url protocol/httpVer" status size "referer" "userAgent" duration ms custom[unpacked]');
-        log_middleware.setStream(fs.createWriteStream(path.join(path.dirname(__dirname), 'logs/log.log'), {flags: 'a'}));
-        this.app.use(log_middleware.gen);
-
-        /**
-         * static
-         */
-        this.app.use(serve(__dirname + '/static'))
-
-        this.app.on('error', error => console.log(error));
-
-        /**
-         * onerror
-         */
-        // onerror(this.app);
-
-        /**
-         * error
-         */
-        // this.app.use(error({
-        //     engine: 'twig',
-        //     template: path.dirname(__dirname) + '/public/error.twig'
-        // }));
     }
 
     __initMiddleware() {
+
+        this.app.use(view);
+        this.app.use(logger);
+        this.app.use(serveStatic);
+        onerror(this.app);
     }
 
     __initDatabase() {
 
     }
 
-
     __initRoute() {
-        this.app.use(route.get('/', HomeController.index));
     }
 
 
-    __initView() {
-        this.app.use(views(path.dirname(__dirname) + '/resources/views', {extension: 'twig'}))
+    __initController() {
+        loaderControllers();
     }
 
     start() {
@@ -87,6 +60,7 @@ class Bootstrap {
             console.log('started at %s:  - port:%s', new Date, port)
         });
     }
+
 
 }
 
