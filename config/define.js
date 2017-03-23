@@ -4,7 +4,7 @@
 'use strict';
 import path from 'path';
 const ROOT = path.dirname(__dirname);
-const LOG_PATH = path.join(ROOT, 'log');
+const LOG_PATH = path.join(ROOT, 'logs','log.log');
 const PUBLIC_PATH = path.join(ROOT, 'public');
 const APP_PATH = path.join(ROOT, 'app');
 const CONTROLLER_PATH = path.join(APP_PATH, 'Http', 'Controllers');
