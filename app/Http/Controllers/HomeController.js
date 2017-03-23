@@ -5,11 +5,12 @@
 import {get, post} from '../routes'
 class HomeController {
     constructor() {
-        this.get = this.get.bind(this);
-        this.post = this.post.bind(this);
-       Object.getOwnPropertyNames(this).forEach(name=>{
-           console.log(typeof  this[name])
-       })
+        // this.get = this.get.bind(this);
+        // this.post = this.post.bind(this);
+        // Object.getOwnPropertyNames(this).forEach(name => {
+        //     console.log(typeof  this[name])
+        // })
+        this.x =123
     }
 
     @get('/123')

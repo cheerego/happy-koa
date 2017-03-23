@@ -4,15 +4,18 @@
 
 import route  from 'koa-route';
 import app from './Kernel/app'
+
 const get = (url) => {
     return (target, name, descriptor) => {
-        app.use(route.get(url, (new (target.constructor))[name]))
+        let action = (new (target.constructor))[name];
+        app.use(route.get(url, action))
         return descriptor;
     }
 }
 const post = (url) => {
     return (target, name, descriptor) => {
-        app.use(route.post(url, (new (target.constructor))[name]))
+        let action = (new (target.constructor))[name];
+        app.use(route.post(url, action))
         return descriptor;
     }
 }
