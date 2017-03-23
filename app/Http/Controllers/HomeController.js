@@ -2,7 +2,8 @@
  * Created by placeless on 17/3/21.
  */
 
-import {get, post} from '../routes'
+import Route from '../Route'
+@Route.init('/api')
 class HomeController {
     constructor() {
         // this.get = this.get.bind(this);
@@ -13,7 +14,7 @@ class HomeController {
         this.x =123
     }
 
-    @get('/123')
+    @Route.get('/123')
     async get(ctx) {
         console.log(this.x);
         await ctx.render('home.twig', {
@@ -22,7 +23,7 @@ class HomeController {
     }
 
 
-    @post('/1234')
+    @Route.post('/1234')
     async post(ctx) {
         await this.render('home.twig', {
             message: 'haha'
