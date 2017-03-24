@@ -3,31 +3,6 @@ This is a koa mvc template via es6 include some middlewares like route,twig,stat
 
 ## Structure
 ```
-├── README.md
-├── app
-│   ├── Bootstarp.js
-│   └── Http
-├── app.js
-├── bower.json
-├── config
-│   ├── db.js
-│   └── path.js
-├── database
-│   └── drivers
-├── logs
-│   └── readme.md
-├── package.json
-├── public
-│   ├── css
-│   ├── error.twig
-│   ├── images
-│   └── js
-├── resources
-│   └── views
-└── server.js
-
-12 directories, 10 files
-MacBook-Pro :: ~/FrontEnd/koa-template » tree -L 3 
 .
 ├── app
 │   ├── Bootstarp.js
@@ -58,4 +33,34 @@ MacBook-Pro :: ~/FrontEnd/koa-template » tree -L 3
 │   └── views
 ├── server.js
 └── README.md
+```
+
+## Controller
+```
+import Route from '../Route'
+
+@Route.init({
+    prefix: '/api'
+})
+class HomeController {
+    constructor() {
+        this.x = 123
+    }
+
+    @Route.get('/123')
+    async get(ctx) {
+        await ctx.render('home.twig', {
+            message: 'haha'
+        })
+    }
+
+    @Route.post('/1234')
+    async post(ctx) {
+        await this.render('home.twig', {
+            message: 'haha'
+        })
+    }
+}
+export default   HomeController;
+
 ```
