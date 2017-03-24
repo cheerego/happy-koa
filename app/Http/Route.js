@@ -22,37 +22,42 @@ let post = (url) => {
 
 class Route {
 
-    constructor(){
-        this.init = this.init.bind(this);
-        this.get = this.get.bind(this);
-        this.post = this.post.bind(this);
+    constructor(prefix) {
+        this.prefix = prefix;
+        // this.init = this.init.bind(this);
+        // this.get = this.get.bind(this);
+        // this.post = this.post.bind(this);
     }
+
     init(prefix) {
+        this.prefix = prefix
+        var that = this;
         return (target, name, descriptor) => {
-            this.prefix = prefix
-            console.log(this.prefix,1)
+            console.log(that.prefix, 1)
         };
     }
 
     get(url) {
+        var that = this
         return (target, name, descriptor) => {
+
             let action = (new (target.constructor))[name];
-            app.use(route.get(this.prefix + url, action))
-            console.log(this.prefix,2)
+            app.use(route.get(that.prefix + url, action));
+
             return descriptor;
         }
     }
 
     post(url) {
+        var that = this;
+
         return (target, name, descriptor) => {
             let action = (new (target.constructor))[name];
-            app.use(route.post(this.prefix + url, action))
+            app.use(route.post(that.prefix + url, action))
             return descriptor;
         }
     }
 }
-export  default {
-    get,post
-}
+export default Route
 
 
