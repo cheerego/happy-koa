@@ -3,7 +3,7 @@
  */
 import fs from 'fs';
 import path from 'path';
-import Define from '../../../config/define'
+import Define from '../../../config/path'
 
 
 export default () => {
