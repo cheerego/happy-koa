@@ -3,7 +3,6 @@
  */
 
 import Route from '../Route'
-@Route.init('/api')
 class HomeController {
     constructor() {
         // this.get = this.get.bind(this);

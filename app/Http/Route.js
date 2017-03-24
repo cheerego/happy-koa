@@ -22,6 +22,11 @@ let post = (url) => {
 
 class Route {
 
+    constructor(){
+        this.init = this.init.bind(this);
+        this.get = this.get.bind(this);
+        this.post = this.post.bind(this);
+    }
     init(prefix) {
         return (target, name, descriptor) => {
             this.prefix = prefix
@@ -46,6 +51,8 @@ class Route {
         }
     }
 }
-export  default new Route
+export  default {
+    get,post
+}
 
 
