@@ -4,14 +4,6 @@
 
 const port = process.env.PORT || 3000
 import app from './Http/Kernel/app'
-// import serve from 'koa-static';
-// import route from 'koa-route';
-// import logger from 'koa-logger2';
-// import error from 'koa-error';
-// import onerror from 'koa-onerror';
-// import fs from 'fs';
-// import path from 'path';
-// import views from 'koa-views';
 import loaderControllers from './Http/plugins/loaderControllers'
 import view from './Http/Middleware/view'
 import logger from './Http/Middleware/logger';
