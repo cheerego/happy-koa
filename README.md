@@ -64,3 +64,14 @@ class HomeController {
 export default   HomeController;
 
 ```
+
+## Install
+```
+yarn or npm install 
+npm run super
+```
+
+## Run
+```
+http://localhost:3000/api/123
+```
