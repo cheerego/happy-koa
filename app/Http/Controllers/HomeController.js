@@ -9,12 +9,13 @@ import Route from '../Route'
 })
 class HomeController {
     constructor() {
-        this.x = 123
+        this.x = 123;
+        this.get = this.get.bind(this);
     }
 
     @Route.get('/123')
     async get(ctx) {
-        this.asd();
+        console.log(this.x)
         await ctx.render('home.twig', {
             message: 'haha'
         })
@@ -27,5 +28,6 @@ class HomeController {
         })
     }
 }
+
 export default HomeController;
 

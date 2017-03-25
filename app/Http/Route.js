@@ -38,8 +38,7 @@ class Route {
         let that = this;
         return (target, name, descriptor) => {
 
-            let action = (new (target.constructor))[name];
-            app.use(route.get(that.config.prefix + url, action));
+            app.use(route.get(that.config.prefix + url, (new (target.constructor))[name]));
 
             return descriptor;
         }
@@ -49,8 +48,8 @@ class Route {
         let that = this;
 
         return (target, name, descriptor) => {
-            let action = (new (target.constructor))[name];
-            app.use(route.post(that.config.prefix + url, action));
+
+            app.use(route.post(that.config.prefix + url, (new (target.constructor))[name]));
 
             return descriptor;
         }
