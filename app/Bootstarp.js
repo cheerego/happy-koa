@@ -8,7 +8,7 @@ import loaderControllers from './Http/plugins/loaderControllers'
 import view from './Http/Middleware/view'
 import logger from './Http/Middleware/logger';
 import serveStatic from './Http/Middleware/static';
-import onerror from './Http/Middleware/error';
+import onerror from './Http/Middleware/onerror';
 
 class Bootstrap {
     constructor() {
@@ -24,6 +24,7 @@ class Bootstrap {
         this.__initRoute();
         this.__initController();
     }
+
     __initDebug() {
     }
 

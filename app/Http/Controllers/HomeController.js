@@ -14,6 +14,7 @@ class HomeController {
 
     @Route.get('/123')
     async get(ctx) {
+        this.asd();
         await ctx.render('home.twig', {
             message: 'haha'
         })
@@ -26,5 +27,5 @@ class HomeController {
         })
     }
 }
-export default   HomeController;
+export default HomeController;
 

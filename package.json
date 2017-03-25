@@ -7,13 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "super": "PORT=3000 node-supervisor -s server.js ",
-    "poststart":"./bin/open"
+    "poststart": "./bin/open"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "koa": "^2.2.0",
-    "koa-error": "^3.0.0",
     "koa-logger": "^2.0.1",
     "koa-logger2": "0.0.1",
     "koa-onerror": "^3.1.0",
@@ -21,6 +20,7 @@
     "koa-static": "^3.0.0",
     "koa-views": "^6.0.1",
     "mongoose": "^4.9.1",
+    "pug": "^2.0.0-beta11",
     "twig": "^1.10.4"
   },
   "devDependencies": {
