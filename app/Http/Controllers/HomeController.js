@@ -3,6 +3,11 @@
  */
 
 import Route from '../Route'
+import h from 'http';
+import bluebird from 'bluebird';
+const Http = bluebird(h);
+
+
 
 @Route.init({
     prefix: '/api'
@@ -15,7 +20,7 @@ class HomeController {
 
     @Route.get('/123')
     async get(ctx) {
-        console.log(this.x)
+
         await ctx.render('home.twig', {
             message: 'haha'
         })
