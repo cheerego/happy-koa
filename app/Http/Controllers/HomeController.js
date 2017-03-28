@@ -4,8 +4,6 @@
 
 import Route from '../Route'
 import h from 'http';
-import bluebird from 'bluebird';
-const Http = bluebird(h);
 
 
 

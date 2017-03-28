@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "super": "PORT=3000 node-supervisor -s server.js ",
+    "dev": "nodemon server.js ",
     "poststart": "./bin/open"
   },
   "author": "",
@@ -33,7 +33,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-preset-stage-3": "^6.22.0",
     "babel-register": "^6.24.0",
-    "open": "0.0.5",
-    "supervisor": "^0.12.0"
+    "nodemon": "^1.11.0",
+    "open": "0.0.5"
   }
 }
