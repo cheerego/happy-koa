@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js ",
+    "start": "nodemon server.js ",
     "poststart": "./bin/open"
   },
   "author": "",
@@ -20,7 +19,7 @@
     "koa-route": "^3.2.0",
     "koa-static": "^3.0.0",
     "koa-views": "^6.0.1",
-    "mongoose": "^4.9.1",
+    "mongoose": "^4.9.4",
     "pug": "^2.0.0-beta11",
     "twig": "^1.10.4"
   },

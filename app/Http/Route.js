@@ -30,7 +30,7 @@ class Route {
         this.config.prefix = config.prefix || '';
         var that = this;
         return (target) => {
-            console.log(that.config.prefix)
+            that.config.prefix;
         };
     }
 
