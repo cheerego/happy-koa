@@ -17,20 +17,16 @@ class HomeController {
 
   @Route.get('/123')
   async get(ctx) {
-
-    let user =  User.create({name: 123});
-    console.log(user);
+    let user = await User.create({name: 123});
 
     await ctx.render('home.twig', {
       message: 'haha'
     })
   }
 
-  @Route.post('/1234')
+  @Route.post('/123')
   async post(ctx) {
-    await this.render('home.twig', {
-      message: 'haha'
-    })
+    ctx.body = ctx.request.body;
   }
 }
 

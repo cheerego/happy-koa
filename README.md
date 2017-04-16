@@ -68,12 +68,10 @@ export default   HomeController;
 ## Install
 ```
 yarn or npm install 
-npm run super
+npm run dev
 ```
 
 ## Run
 ```
 http://localhost:3000/api/123
-```
-```
 ```

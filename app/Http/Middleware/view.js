@@ -3,5 +3,5 @@
  */
 import views from 'koa-views';
 import Define from '../../../config/path'
-const view = views(Define.VIEW_PATH, {extension: 'twig'})
+const view = views(Define.VIEW_PATH, {extension: 'twig'});
 export default view

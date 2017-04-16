@@ -5,23 +5,7 @@
 import route  from 'koa-route';
 import app from './Kernel/app'
 
-let get = (url) => {
-    return (target, name, descriptor) => {
-        let action = (new (target.constructor))[name];
-        app.use(route.get(url, action))
-        return descriptor;
-    }
-}
-let post = (url) => {
-    return (target, name, descriptor) => {
-        let action = (new (target.constructor))[name];
-        app.use(route.post(url, action))
-        return descriptor;
-    }
-}
-
 class Route {
-
     constructor() {
         this.config = {prefix:''};
     }
@@ -55,6 +39,6 @@ class Route {
         }
     }
 }
-export default new Route
+export default new Route;
 
 
