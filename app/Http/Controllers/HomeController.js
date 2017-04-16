@@ -15,7 +15,7 @@ class HomeController {
     this.get = this.get.bind(this);
   }
 
-  @Route.get('/123')
+  @Route.get('/')
   async get(ctx) {
     let user = await User.create({name: 123});
 

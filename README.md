@@ -1,6 +1,10 @@
 # Hello-koa
 This is a koa mvc template via es6 include some middlewares like route,twig,static and so on.
 
+# Development
+```
+node > 7.6 (koa-bodyparser require node version > 7.6)
+```
 ## Structure
 ```
 .
@@ -73,5 +77,5 @@ npm run dev
 
 ## Run
 ```
-http://localhost:3000/api/123
+http://localhost:3000/
 ```
