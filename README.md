@@ -10,6 +10,9 @@ node > 7.6 (koa-bodyparser require node version > 7.6)
 .
 ├── app
 │   ├── Bootstarp.js
+│   ├──Models
+│   │     └── UserModels.js
+│   ├──Services
 │   └── Http
 │       ├── Controllers
 │       ├── Kernel
@@ -41,31 +44,31 @@ node > 7.6 (koa-bodyparser require node version > 7.6)
 
 ## Controller
 ```
-import Route from '../Route'
-
 @Route.init({
     prefix: '/api'
 })
 class HomeController {
-    constructor() {
-        this.x = 123
-    }
+  constructor() {
+    this.x = 123;
+    this.get = this.get.bind(this);
+  }
 
-    @Route.get('/123')
-    async get(ctx) {
-        await ctx.render('home.twig', {
-            message: 'haha'
-        })
-    }
+  @Route.get('/')
+  async get(ctx) {
+    let user = await User.create({name: 123});
 
-    @Route.post('/1234')
-    async post(ctx) {
-        await this.render('home.twig', {
-            message: 'haha'
-        })
-    }
+    await ctx.render('home.twig', {
+      message: 'haha'
+    })
+  }
+
+  @Route.post('/123')
+  async post(ctx) {
+    ctx.body = ctx.request.body;
+  }
 }
-export default   HomeController;
+
+export default HomeController;
 
 ```
 
