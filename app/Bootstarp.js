@@ -10,7 +10,7 @@ import logger from './Http/Middleware/logger';
 import serveStatic from './Http/Middleware/static';
 import onerror from './Http/Middleware/onerror';
 import bodyparser from './Http/Middleware/bodyparser';
-
+import session from './Http/Middleware/session';
 import '../database/drivers/mongodb';
 class Bootstrap {
   constructor() {
@@ -37,6 +37,7 @@ class Bootstrap {
     this.app.use(serveStatic);
     onerror(this.app);
     this.app.use(bodyparser());
+    this.app.use(session(this.app));
   }
 
   __initDatabase() {
