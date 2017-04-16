@@ -13,6 +13,7 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
     "koa-logger": "^2.0.1",
     "koa-logger2": "0.0.1",
     "koa-onerror": "^3.1.0",
@@ -20,7 +21,6 @@
     "koa-static": "^3.0.0",
     "koa-views": "^6.0.1",
     "mongoose": "^4.9.4",
-    "pug": "^2.0.0-beta11",
     "twig": "^1.10.4"
   },
   "devDependencies": {

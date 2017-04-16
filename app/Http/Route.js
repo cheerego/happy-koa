@@ -23,7 +23,7 @@ let post = (url) => {
 class Route {
 
     constructor() {
-        this.config = {};
+        this.config = {prefix:''};
     }
 
     init(config) {

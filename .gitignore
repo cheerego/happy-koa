@@ -4,3 +4,4 @@ node_modules
 logs/log.log
 public/bower_components
 npm-debug.log
+.vscode
